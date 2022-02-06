@@ -119,7 +119,7 @@ export default function App() {
                 ? <Splash handleClick={toggleGameOn} handleParamsChange={handleParamsChange} quizParams={quizParams}/>
                 : questions }
             {gameOn &&
-                <div>
+                <div className="resultsDiv">
                     {!completed && <button className="answerButton" onClick={toggleCompleted}>Submit</button>}
                     {completed &&
                     <div className="gameResults">

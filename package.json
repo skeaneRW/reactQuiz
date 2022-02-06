@@ -1,5 +1,6 @@
 {
   "name": "quizzical",
+  "homepage": "http://hellokeane.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

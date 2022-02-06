@@ -18,12 +18,14 @@ body {
 }
 .mainWrapper {
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column wrap;
     align-items: center;
-    width: 600px;
+    justify-content: space-between;
+    padding: 0 10px 0 10px;
+    /*width: 600px;*/
 }
 .lineBreak {
-    width: 399px;
+    width: 70%;
     height: 0;
     border: 1px solid #DBDEF0;
     transform: rotate(-0.05deg);
@@ -38,16 +40,20 @@ body {
 }
 
 .answerWrapper {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    gap: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .25rem;
+    padding: 10px;
+    justify-content: space-around;
+    align-items: stretch;
 }
 
 .bodyWrapper {
     display: flex;
     flex-flow: column nowrap;
+    justify-content: center;
     align-items: center;
+    padding: 0 10px 0 10px;
 }
 
 .selectedAnswer {
@@ -77,18 +83,19 @@ body {
     border: 1px dashed #293264;
 }
 .gameResults {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    padding: 0 10px;
 }
 fieldset {
     display: grid;
-    grid-template-columns:  25px 120px 25px 120px 25px 120px;
-    justify-content: flex-start;
+    grid-template-columns:  1fr 11fr;
+    justify-content: center;
     align-items: center;
-    grid-gap: 15px;
-    margin: 20px;
+    grid-gap: 5px;
+    margin: 5px 0 5px 0;
     border-radius: 15px;
     border: 3px solid #293264;
     color: #293264;
@@ -99,13 +106,34 @@ fieldset {
     color: #293264;
     font-weight: 900;
     font-size: 2.5rem;
-    padding: 2rem 0 0 0;
+    padding: .5rem 0 0 0;
     margin: 0;
 }
 .subHead {
     color: #293264;
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     padding: 0;
     margin: 0;
+}
+.resultsDiv {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px 30px 15px;
+}
+
+@media only screen and (min-width: 768px) {
+    .mainWrapper {
+        width: 600px;
+    }
+    .answerWrapper {
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: space-around;
+    }
+    fieldset {
+        grid-template-columns: 1fr 11fr 1fr 11fr 1fr 11fr;
+        padding: 20px 40px;
+    }
 }
